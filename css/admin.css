@@ -3,88 +3,97 @@
 ============================== */
 body.admin-body {
     display: flex;
+    min-height: 100vh;
+    background-color: #fdfdfd;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
 }
 
 /* Sidebar */
 .admin-body .sidebar {
     width: 220px;
-    background-color: #f7d6d0;
+    background-color: #5a3825; /* marrom */
     height: 100vh;
     padding: 20px;
     position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
 }
 
 .sidebar-logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #c94c4c;
+    color: #c9a54c; /* dourado */
     margin-bottom: 40px;
     text-align: center;
 }
 
 .sidebar nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .sidebar nav ul li {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
+/* 🔹 Links agora têm fundo e padding */
 .sidebar nav ul li a {
+    display: block;
     text-decoration: none;
-    color: #333;
+    color: #ffffff; /* branco */
     font-weight: 500;
-    transition: color 0.3s;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #6e4630; /* marrom um pouco mais claro que o fundo */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar nav ul li a:hover {
-    color: #c94c4c;
+/* Hover e ativo */
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #c9a54c; /* dourado */
+    color: #5a3825; /* marrom */
+    font-weight: 600;
 }
 
-/* Conteúdo principal */
-.admin-body .main-content {
-    margin-left: 240px;
-    padding: 30px;
-    width: calc(100% - 240px);
-}
 
-.main-content header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #c94c4c;
-    margin-bottom: 10px;
-}
-
-.main-content header p {
-    margin-bottom: 30px;
-    font-size: 1rem;
-}
-
-/* Tabela de produtos */
+/* ==============================
+   Tabela de produtos
+============================== */
 .produtos-cadastrados h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #c94c4c;
+    color: #5a3825; /* marrom */
     margin-bottom: 15px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff4f2;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-width: 600px;
 }
 
 table thead {
-    background-color: #f7d6d0;
+    background-color: #c9a54c; /* dourado */
+    color: #fff;
 }
 
 table th, table td {
     padding: 12px 15px;
     text-align: left;
+    font-size: 0.95rem;
 }
 
 table td img {
@@ -94,38 +103,46 @@ table td img {
     border-radius: 5px;
 }
 
+/* Botões */
 .btn-editar,
 .btn-excluir {
-    padding: 5px 10px;
+    padding: 6px 12px;
     margin-right: 5px;
     text-decoration: none;
     border-radius: 5px;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn-editar {
-    background-color: #c94c4c;
+    background-color: #5a3825; /* marrom */
 }
 
 .btn-editar:hover {
-    background-color: #a33b3b;
+    background-color: #40281b;
 }
 
 .btn-excluir {
-    background-color: #777;
+    background-color: #c9a54c; /* dourado */
+    color: #5a3825; /* texto marrom */
+    font-weight: 600;
 }
 
 .btn-excluir:hover {
-    background-color: #555;
+    background-color: #b08e3f;
 }
 
-/* Formulário de adicionar produto */
+/* ==============================
+   Formulário de adicionar produto
+============================== */
 .form-adicionar-produto form {
-    background-color: #fff4f2;
+    background-color: #fff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #e3dac5;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     max-width: 700px;
     margin: 0 auto;
 }
@@ -134,6 +151,7 @@ table td img {
     display: block;
     margin-top: 15px;
     font-weight: 500;
+    color: #5a3825;
 }
 
 .form-adicionar-produto input,
@@ -167,4 +185,74 @@ table td img {
 
 .btn-remover:hover {
     background-color: #555;
+}
+
+/* ==============================
+   Responsividade Admin/Login
+============================== */
+@media screen and (max-width: 768px) {
+    /* Sidebar em cima */
+    .admin-body {
+        flex-direction: column;
+    }
+
+    .admin-body .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+        background-color: #fff; /* fundo branco no mobile */
+        border-bottom: 2px solid #c9a54c; /* detalhe dourado */
+    }
+
+    .sidebar-logo {
+        margin-bottom: 20px;
+        color: #5a3825; /* marrom */
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar nav ul li a {
+        color: #5a3825; /* marrom no mobile */
+        font-weight: 600;
+    }
+
+    .sidebar nav ul li a:hover {
+        color: #c9a54c; /* dourado no hover */
+        background-color: transparent; /* sem fundo no mobile */
+    }
+
+    /* Conteúdo ocupa largura total */
+    .admin-body .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Wrapper para scroll na tabela */
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    /* Botões maiores no mobile */
+    .btn-editar,
+    .btn-excluir,
+    .btn-remover {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
 }
