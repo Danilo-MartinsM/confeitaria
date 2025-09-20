@@ -63,60 +63,89 @@ nav ul li a:hover {
 /* ==============================
    Hamburger Menu (mobile)
 ============================== */
+/* Hamburger - escondido no desktop */
 .hamburger {
-    display: none; /* Escondido em desktop */
+    display: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #6b4226; /* Marrom escuro */
+    color: #D4AF37;
+    z-index: 1100;
 }
 
-/* Menu lateral para celular */
-#nav-menu {
+/* Menu normal (desktop) */
+#nav-menu ul {
     display: flex;
+    gap: 20px;
+    list-style: none;
 }
 
+/* Mobile */
 @media screen and (max-width: 768px) {
-    /* Oculta o menu normal */
-    nav ul {
-        display: none;
+    /* Exibe hamburger */
+    .hamburger {
+        display: block;
+        margin-right: auto; /* lado esquerdo */
+    }
+
+    /* Esconde menu horizontal normal */
+    #nav-menu ul {
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -250px; /* Inicialmente escondido à esquerda */
+        left: -250px;
         width: 250px;
         height: 100%;
-        background-color: #FFF8E7; /* Fundo do menu mobile */
+        background-color: #FFF8E7;
         padding-top: 60px;
         box-shadow: 2px 0 5px rgba(0,0,0,0.3);
         transition: left 0.3s;
         z-index: 1000;
     }
+    #nav-menu ul li a {
+        color: #6b4226; /* marrom escuro para contraste */
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: block;
+        padding: 10px 0;
+        transition: color 0.3s;
+    }
 
-    nav ul li {
+    #nav-menu ul li a:hover {
+        color: #D4AF37; /* dourado no hover */
+    }
+
+
+
+
+    #nav-menu ul li {
         margin: 20px 0;
         text-align: center;
     }
 
-    /* Exibe hamburger no mobile */
-    .hamburger {
-        display: block;
-        margin-right: auto; /* Fica do lado esquerdo */
+    /* Quando o menu estiver ativo */
+    #nav-menu.active ul {
+        left: 0;
     }
 
-    /* Menu ativo */
-    nav.active ul {
-        left: 0; /* Mostra menu ao clicar no hamburger */
-    }
-
-    /* Ajusta container e logo para mobile */
+    /* Ajusta container e logo */
     .header-container {
         justify-content: flex-start;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 40px;
     }
 
     .logo {
-        margin-left: 15px;
+        font-size: 1.3rem;
+        margin-left: 10px;
     }
 }
+
+
+
 
 /* ==============================
    Banner

@@ -6,17 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav = document.getElementById("nav-menu");
 
     hamburger.addEventListener("click", () => {
-        // Alterna a classe 'active' no nav para abrir/fechar
-        nav.classList.toggle("active");
+        nav.classList.toggle("active"); // adiciona/remove classe 'active'
     });
 
-    // Fecha o menu se clicar em um link
+    // Fecha o menu ao clicar em algum link
     const navLinks = nav.querySelectorAll("a");
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
-            if (nav.classList.contains("active")) {
-                nav.classList.remove("active");
-            }
+            nav.classList.remove("active");
         });
     });
 });
+
+
+
+

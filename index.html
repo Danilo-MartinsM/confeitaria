@@ -13,13 +13,11 @@
     <header>
         <div class="header-container">
             <!-- Hamburger do lado esquerdo -->
-            <div class="hamburger" id="hamburger">
-                &#9776;
-            </div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
 
             <!-- Logo -->
             <div class="logo">
-                <img src="img/banner/logo.png" alt="Pura Doçura" style="height:50px;">
+                <img src="img/banner/logo.png" alt="Pura Doçura" style="width: 64px; height: 50px;">
                 Pura Doçura
             </div>
 
@@ -35,6 +33,7 @@
             </nav>
         </div>
     </header>
+
 
     <!-- Banner principal -->
     <section class="banner">
@@ -90,6 +89,13 @@
             </div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 </body>
 </html>
