@@ -410,3 +410,46 @@ footer .social a:hover {
 .login-container .links a:hover {
     text-decoration: underline;
 }
+
+
+/* Hamburger - escondido por padrão */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #6b4226; /* marrom escuro */
+}
+
+/* Menu lateral para celular */
+#nav-menu {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #fff8f5;
+        padding-top: 60px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+        transition: right 0.3s;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav.active ul {
+        right: 0;
+    }
+}
