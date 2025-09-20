@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto - Pura Doçura Admin</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">Pura Doçura Admin</div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="adicionar_produto.html">Adicionar Produto</a></li>
+                <li><a href="insumos.html">Gerenciar Insumos</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="index.html">Ver Site</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <header>
+            <h1>Adicionar Produto</h1>
+            <p>Preencha os campos abaixo para cadastrar um novo produto.</p>
+        </header>
+
+        <section class="form-adicionar-produto">
+            <form id="formProduto">
+                <label for="nome">Nome do Produto</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+                <label for="preco">Preço de Venda (R$)</label>
+                <input type="number" id="preco" name="preco" step="0.01" required>
+
+                <label for="foto">Foto do Produto</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+
+                <h3>Insumos</h3>
+                <div id="insumos-container">
+                    <div class="insumo">
+                        <input type="text" name="insumo_nome[]" placeholder="Nome do insumo" required>
+                        <input type="number" name="insumo_quantidade[]" placeholder="Quantidade" step="0.01" required>
+                        <input type="number" name="insumo_custo[]" placeholder="Custo R$" step="0.01" required>
+                        <button type="button" class="btn-remover">Remover</button>
+                    </div>
+                </div>
+                <button type="button" id="adicionar-insumo" class="btn">Adicionar Insumo</button>
+
+                <button type="submit" class="btn finalizar">Cadastrar Produto</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Adicionar novo insumo
+        const adicionarBtn = document.getElementById('adicionar-insumo');
+        const insumosContainer = document.getElementById('insumos-container');
+
+        adicionarBtn.addEventListener('click', () => {
+            const div = document.createElement('div');
+            div.classList.add('insumo');
+            div.innerHTML = `
+                <input type="text" name="insumo_nome[]" placeholder="Nome do insumo" required>
+                <input type="number" name="insumo_quantidade[]" placeholder="Quantidade" step="0.01" required>
+                <input type="number" name="insumo_custo[]" placeholder="Custo R$" step="0.01" required>
+                <button type="button" class="btn-remover">Remover</button>
+            `;
+            insumosContainer.appendChild(div);
+        });
+
+        // Remover insumo
+        insumosContainer.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('btn-remover')) {
+                e.target.parentElement.remove();
+            }
+        });
+
+        // Submissão do formulário (exemplo)
+        const formProduto = document.getElementById('formProduto');
+        formProduto.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Produto cadastrado com sucesso! Aqui você pode integrar com backend.');
+            formProduto.reset();
+            insumosContainer.innerHTML = '';
+        });
+    </script>
+</body>
+</html>

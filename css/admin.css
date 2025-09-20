@@ -1,0 +1,170 @@
+/* ==============================
+   Layout Admin
+============================== */
+body.admin-body {
+    display: flex;
+}
+
+/* Sidebar */
+.admin-body .sidebar {
+    width: 220px;
+    background-color: #f7d6d0;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c94c4c;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    color: #c94c4c;
+}
+
+/* Conteúdo principal */
+.admin-body .main-content {
+    margin-left: 240px;
+    padding: 30px;
+    width: calc(100% - 240px);
+}
+
+.main-content header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #c94c4c;
+    margin-bottom: 10px;
+}
+
+.main-content header p {
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Tabela de produtos */
+.produtos-cadastrados h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #c94c4c;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff4f2;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+table thead {
+    background-color: #f7d6d0;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.btn-editar,
+.btn-excluir {
+    padding: 5px 10px;
+    margin-right: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.btn-editar {
+    background-color: #c94c4c;
+}
+
+.btn-editar:hover {
+    background-color: #a33b3b;
+}
+
+.btn-excluir {
+    background-color: #777;
+}
+
+.btn-excluir:hover {
+    background-color: #555;
+}
+
+/* Formulário de adicionar produto */
+.form-adicionar-produto form {
+    background-color: #fff4f2;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-adicionar-produto label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.form-adicionar-produto input,
+.form-adicionar-produto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+#insumos-container .insumo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#insumos-container .insumo input {
+    flex: 1;
+}
+
+.btn-remover {
+    background-color: #777;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.btn-remover:hover {
+    background-color: #555;
+}

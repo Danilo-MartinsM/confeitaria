@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pura Doçura</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">Pura Doçura Admin</div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="adicionar_produto.html">Adicionar Produto</a></li>
+                <li><a href="insumos.html">Gerenciar Insumos</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="index.html">Ver Site</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <header>
+            <h1>Dashboard</h1>
+            <p>Bem-vindo, administrador! Aqui você pode gerenciar produtos e insumos.</p>
+        </header>
+
+        <section class="produtos-cadastrados">
+            <h2>Produtos Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="../img/produtos/bolo1.jpg" alt="Bolo de Chocolate"></td>
+                        <td>Bolo de Chocolate</td>
+                        <td>Bolo artesanal com recheio cremoso.</td>
+                        <td>R$ 45,00</td>
+                        <td>
+                            <a href="#" class="btn-editar">Editar</a>
+                            <a href="#" class="btn-excluir">Excluir</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="../img/produtos/torta1.jpg" alt="Torta de Morango"></td>
+                        <td>Torta de Morango</td>
+                        <td>Torta fresca com morangos selecionados.</td>
+                        <td>R$ 50,00</td>
+                        <td>
+                            <a href="#" class="btn-editar">Editar</a>
+                            <a href="#" class="btn-excluir">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

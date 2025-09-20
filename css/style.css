@@ -1,0 +1,412 @@
+/* ==============================
+   Reset e corpo geral
+============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #5C4033; /* marrom para textos */
+    background-color: #FFF8E7; /* fundo off-white */
+}
+
+/* ==============================
+   Header
+============================== */
+header {
+    background-color: #5C4033; /* marrom escuro */
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #D4AF37; /* dourado */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF8E7; /* branco */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #D4AF37; /* dourado ao passar */
+}
+
+/* ==============================
+   Banner
+============================== */
+.banner {
+    background-image: url('../img/banner/banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #D4AF37;
+    text-shadow: 2px 2px 4px #5C4033;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #FFF8E7;
+    text-shadow: 1px 1px 3px #5C4033;
+}
+
+/* Botões gerais */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #D4AF37; /* dourado */
+    color: #5C4033; /* marrom */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #BFA033; /* dourado mais escuro */
+}
+
+/* ==============================
+   Produtos Principais / Cards
+============================== */
+.produtos-principais {
+    padding: 60px 0;
+    background-color: #FFF8E7;
+}
+
+.produtos-principais h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #D4AF37;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background-color: #FFF3D1; /* off-white com leve dourado */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(92, 64, 51, 0.2); /* sombra marrom suave */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    color: #5C4033; /* marrom */
+}
+
+.card p {
+    padding: 0 15px 15px;
+    font-size: 0.9rem;
+    color: #5C4033;
+}
+
+.btn-card {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 20px;
+    background-color: #D4AF37;
+    color: #5C4033;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-card:hover {
+    background-color: #BFA033;
+}
+
+/* ==============================
+   Sobre Nós
+============================== */
+.sobre-nos {
+    padding: 60px 0;
+    background-color: #FFF8E7;
+    text-align: center;
+}
+
+.sobre-nos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #D4AF37;
+}
+
+.sobre-nos p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #5C4033;
+}
+
+/* ==============================
+   Rodapé
+============================== */
+footer {
+    background-color: #5C4033;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #FFF8E7;
+}
+
+footer .social a {
+    text-decoration: none;
+    color: #FFF8E7;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .social a:hover {
+    color: #D4AF37;
+}
+
+/* ==============================
+   Produto Detalhe
+============================== */
+.produto-detalhe {
+    padding: 60px 0;
+    background-color: #FFF8E7;
+}
+
+.produto-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.produto-imagem img {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(92, 64, 51, 0.2);
+}
+
+.produto-info {
+    max-width: 500px;
+}
+
+.produto-info h1 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.produto-info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #5C4033;
+}
+
+.produto-info .preco {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+
+/* ==============================
+   Checkout / Pagamento
+============================== */
+.checkout {
+    padding: 60px 0;
+    background-color: #FFF8E7;
+}
+
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFF3D1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(92, 64, 51, 0.2);
+}
+
+.checkout h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #D4AF37;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.checkout-form h2,
+.resumo-pedido h2,
+.opcoes-pagamento h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.checkout-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #5C4033;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #5C4033;
+    font-size: 1rem;
+    color: #5C4033;
+    background-color: #FFF8E7;
+}
+
+.resumo-pedido ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #D4AF37;
+}
+
+.resumo-pedido ul li strong {
+    font-weight: 700;
+    color: #D4AF37;
+}
+
+.finalizar {
+    display: block;
+    text-align: center;
+    padding: 12px 30px;
+    background-color: #D4AF37;
+    color: #5C4033;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.finalizar:hover {
+    background-color: #BFA033;
+}
+
+/* ==============================
+   Login
+============================== */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFF8E7;
+}
+
+.login-container {
+    background-color: #FFF3D1;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(92, 64, 51, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #D4AF37;
+    margin-bottom: 30px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: 500;
+    color: #5C4033;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #5C4033;
+    font-size: 1rem;
+    color: #5C4033;
+    background-color: #FFF8E7;
+}
+
+.login-container .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #D4AF37;
+    color: #5C4033;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container .btn:hover {
+    background-color: #BFA033;
+}
+
+.login-container .links a {
+    color: #D4AF37;
+}
+
+.login-container .links a:hover {
+    text-decoration: underline;
+}
